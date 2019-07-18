@@ -226,14 +226,14 @@ return [
         */
 
         'menu_items' => [
-            'wp-logo'     => false,
+            'wp-logo'     => true,
             'site-name'   => true,
-            'new-content' => false,
-            'my-account'  => false,
-            'updates'     => false,
-            'search'      => false,
-            'customize'   => false,
-            'comments'    => false,
+            'new-content' => true,
+            'my-account'  => true,
+            'updates'     => true,
+            'search'      => true,
+            'customize'   => true,
+            'comments'    => true,
         ],
     ],
 ];
