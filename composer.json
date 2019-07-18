@@ -1,0 +1,33 @@
+{
+  "name": "tiny-pixel/acorn-admin-menus",
+  "type": "package",
+  "license": "MIT",
+  "description": "Admin menu management for Acorn projects",
+  "authors": [
+    {
+      "name": "Kelly Mears",
+      "email": "kelly@tinypixel.dev"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "acorn",
+    "sage"
+  ],
+  "support": {
+    "issues": "https://github.com/pixelcollective/acorn-admin-menus/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "TinyPixel\\AdminMenu\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.3"
+  },
+  "extra": {
+    "acorn": {
+      "providers": ["TinyPixel\\AdminMenu\\Providers\\AdminMenuServiceProvider"]
+    }
+  }
+}
