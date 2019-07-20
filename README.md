@@ -1,4 +1,4 @@
-# Acorn Admin Menus
+# Acorn Settings -- Admin Menus
 
 Provides Acorn projects with configuration options for the WordPress admin menu and admin bar.
 
@@ -15,7 +15,7 @@ Provides Acorn projects with configuration options for the WordPress admin menu 
 Install via composer:
 
 ```bash
-composer require tiny-pixel/acorn-admin-menus
+composer require tiny-pixel/acorn-settings-admin-menus
 ```
 
 After installation run the following command to publish the starter configuration file to your application:
