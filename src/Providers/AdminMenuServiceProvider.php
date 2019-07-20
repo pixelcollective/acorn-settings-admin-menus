@@ -14,7 +14,7 @@ use \Roots\Acorn\ServiceProvider;
 /**
  * Admin menu services provider
  *
- * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @author Kelly Mears <kelly@tinypixel.dev>
  * @license MIT
  * @since   0.0.1
  */
@@ -61,8 +61,8 @@ class AdminMenuServiceProvider extends ServiceProvider
             'optionsPages' => $this->app->make('wordpress.options-pages'),
         ];
 
-        $this->services->adminMenu->init($this->config->menu);
-        $this->services->adminBar->init($this->config->bar);
+        $this->services->menu->init($this->config->menu);
+        $this->services->bar->init($this->config->bar);
 
         $this->config->optionsPages->each(function ($page) {
             $this->services->optionsPages->addPage(...$page);
