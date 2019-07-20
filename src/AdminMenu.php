@@ -1,15 +1,16 @@
 <?php
 
-namespace TinyPixel\AdminMenu;
+namespace TinyPixel\Settings;
 
 use function \add_action;
 use function \remove_menu_page;
 use function \remove_submenu_page;
 use function \current_user_can;
 
-use \Roots\Acorn\Application;
-use \Illuminate\Support\Collection;
 use \TinyPixel\AdminMenu\Traits;
+use \Illuminate\Support\Collection;
+
+use \Roots\Acorn\Application;
 
 /**
  * Admin menu
@@ -23,7 +24,7 @@ class AdminMenu
     /**
      * @var $menuSlugs
      */
-    use Traits\MenuSlugs;
+    use Traits\AdminMenuSlugs;
 
     /**
      * Filepath to file which contains CSS to hide admin menu

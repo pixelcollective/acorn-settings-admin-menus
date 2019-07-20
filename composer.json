@@ -1,5 +1,5 @@
 {
-  "name": "tiny-pixel/acorn-admin-menus",
+  "name": "tiny-pixel/acorn-settings-admin-menus",
   "type": "package",
   "license": "MIT",
   "description": "Admin menu management for Acorn projects",
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TinyPixel\\AdminMenu\\": "src/"
+      "TinyPixel\\Settings\\": "src/"
     }
   },
   "require": {
@@ -27,7 +27,7 @@
   },
   "extra": {
     "acorn": {
-      "providers": ["TinyPixel\\AdminMenu\\Providers\\AdminMenuServiceProvider"]
+      "providers": ["TinyPixel\\Settings\\Providers\\AdminMenuServiceProvider"]
     }
   }
 }

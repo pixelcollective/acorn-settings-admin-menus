@@ -1,14 +1,14 @@
 <?php
 
-namespace TinyPixel\AdminMenu\Providers;
+namespace TinyPixel\Settings\Providers;
 
-use \TinyPixel\AdminMenu\AdminMenu;
-use \TinyPixel\AdminMenu\AdminBar;
-use \TinyPixel\AdminMenu\OptionsPages;
+use \TinyPixel\Settings\AdminMenu;
+use \TinyPixel\Settings\AdminBar;
+use \TinyPixel\Settings\OptionsPages;
+
 use \Illuminate\Support\Collection;
 
 use function \Roots\config_path;
-
 use \Roots\Acorn\ServiceProvider;
 
 /**

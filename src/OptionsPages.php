@@ -1,12 +1,13 @@
 <?php
 
-namespace TinyPixel\AdminMenu;
+namespace TinyPixel\Settings;
 
 use function \add_action;
 use function \add_options_page;
 
-use \Roots\Acorn\Application;
 use \Illuminate\Support\Collection;
+
+use \Roots\Acorn\Application;
 
 /**
  * Options Pages

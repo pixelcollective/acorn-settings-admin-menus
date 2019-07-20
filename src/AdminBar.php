@@ -1,11 +1,13 @@
 <?php
 
-namespace TinyPixel\AdminMenu;
+namespace TinyPixel\Settings;
 
 use \WP_Admin_Bar;
 use function \add_action;
-use \Roots\Acorn\Application;
+
 use \Illuminate\Support\Collection;
+
+use \Roots\Acorn\Application;
 
 /**
  * Admin bar

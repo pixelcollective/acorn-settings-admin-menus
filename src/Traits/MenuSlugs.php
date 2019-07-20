@@ -1,8 +1,8 @@
 <?php
 
-namespace TinyPixel\AdminMenu\Traits;
+namespace TinyPixel\Settings\Traits;
 
-trait MenuSlugs
+trait AdminMenuSlugs
 {
     public $menuSlugs = [
         'dashboard' => [
