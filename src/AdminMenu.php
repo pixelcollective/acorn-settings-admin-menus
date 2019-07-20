@@ -7,7 +7,7 @@ use function \remove_menu_page;
 use function \remove_submenu_page;
 use function \current_user_can;
 
-use \TinyPixel\AdminMenu\Traits;
+use \TinyPixel\Settings\Traits;
 use \Illuminate\Support\Collection;
 
 use \Roots\Acorn\Application;
