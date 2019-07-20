@@ -9,7 +9,7 @@ use function \current_user_can;
 
 use \Roots\Acorn\Application;
 use \Illuminate\Support\Collection;
-use \TinyPixel\Support\WordPress\Admin\Traits;
+use \TinyPixel\AdminMenu\Traits;
 
 /**
  * Admin menu
