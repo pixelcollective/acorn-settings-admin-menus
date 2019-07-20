@@ -7,7 +7,7 @@ return [
     | Admin Menu
     |----------------------------------------------------------------------
     |
-    | Modify the WordPress Admin Menu
+    | Modify WordPress admin menu functionalities
     |
     */
 
@@ -33,6 +33,23 @@ return [
         | Each parameter is overridden by the ones preceeding it.
         |
         */
+
+        /**
+         * Example usage:
+         *
+         * Shows `Dashboard` menu on development and staging
+         * Only shows `Updates` submenu to users with `develop` capability
+         --------------------
+
+         'dashboard' => [
+            'enabled' => ['', ['development', 'staging'], []],
+            'sub_menu_items' => [
+                'home'    => ['display', [], []],
+                'updates' => ['', [], ['develop']],
+            ],
+        ],
+
+         */
 
         'menu_items' => [
 

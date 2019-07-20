@@ -2,15 +2,20 @@
 
 namespace TinyPixel\Settings;
 
+// WordPress
 use function \add_action;
 use function \remove_menu_page;
 use function \remove_submenu_page;
 use function \current_user_can;
 
-use \TinyPixel\Settings\Traits;
+// Illuminate framework
 use \Illuminate\Support\Collection;
 
+// Roots
 use \Roots\Acorn\Application;
+
+// Internal
+use \TinyPixel\Settings\Traits;
 
 /**
  * Admin menu
@@ -104,6 +109,21 @@ class AdminMenu
             } else {
                 $this->processSubMenuItems($setting, $menuItem);
             }
+
+            /**
+             * If the user is on the page of the menu item
+             * and it has been fully disabled (not just visually hidden)
+             * return an error message
+             */
+            global $pagenow;
+
+            $currentSlug = $this->menuSlugs[$menuItem]['menuItem'];
+
+            if ($pagenow == $currentSlug && $global=="removed") {
+                wp_die(__('This feature is not enabled.'), '', [
+                    'response' => 403,
+                ]);
+            }
         });
     }
 
@@ -140,6 +160,21 @@ class AdminMenu
              */
             } elseif (!empty($capability) && !$this->clear($capability)) {
                 $this->removeSubMenuItem($menuItem, $subMenuItem);
+            }
+
+            /**
+             * If the user is on the page of the menu item
+             * and it has been fully disabled (not just visually hidden)
+             * return an error message
+             */
+            global $pagenow;
+
+            $currentSlug = $this->menuSlugs[$menuItem]['subMenuItems'][$subMenuItem][1];
+
+            if ($pagenow == $currentSlug && $global=="removed") {
+                wp_die(__('This feature is not enabled.'), '', [
+                    'response' => 403,
+                ]);
             }
         });
     }
