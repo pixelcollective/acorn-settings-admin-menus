@@ -47,25 +47,27 @@ class AdminMenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__ . '/../config/admin-menu.php' => config_path('admin-menu.php')]);
+        $config = __DIR__ . '/../config/admin-menu.php';
 
-        $this->config = (object) [
-            'menu' => Collection::make($this->app['config']->get('admin-menu.admin_menu')),
-            'bar' => Collection::make($this->app['config']->get('admin-menu.admin_bar')),
-            'optionsPages' => Collection::make($this->app['config']->get('admin-menu.options_pages')),
+        $this->publishes([$config => config_path('wordpress/admin-menu.php')]);
+
+        $this->settings = (object) [
+            'menu'    => Collection::make($this->app['config']->get('wordpress.admin-menu.admin_menu')),
+            'bar'     => Collection::make($this->app['config']->get('wordpress.admin-menu.admin_bar')),
+            'options' => Collection::make($this->app['config']->get('wordpress.admin-menu.options_pages')),
         ];
 
         $this->services = (object) [
-            'menu' => $this->app->make('wordpress.admin-menu'),
-            'bar'  => $this->app->make('wordpress.admin-bar'),
-            'optionsPages' => $this->app->make('wordpress.options-pages'),
+            'menu'    => $this->app->make('wordpress.admin-menu'),
+            'bar'     => $this->app->make('wordpress.admin-bar'),
+            'options' => $this->app->make('wordpress.options-pages'),
         ];
 
-        $this->services->menu->init($this->config->menu);
-        $this->services->bar->init($this->config->bar);
+        $this->services->menu->init($this->settings->menu);
+        $this->services->bar->init($this->settings->bar);
 
-        $this->config->optionsPages->each(function ($page) {
-            $this->services->optionsPages->addPage(...$page);
+        $this->settings->options->each(function ($page) {
+            $this->services->options->addPage(...$page);
         });
     }
 }

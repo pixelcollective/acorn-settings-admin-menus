@@ -49,7 +49,7 @@ return [
             ],
         ],
 
-         */
+        */
 
         'menu_items' => [
 
