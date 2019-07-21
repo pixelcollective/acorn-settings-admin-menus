@@ -47,7 +47,7 @@ class AdminMenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config = __DIR__ . '/../config/admin-menu.php';
+        $config = __DIR__ . '/../config/wordpress/admin-menu.php';
 
         $this->publishes([$config => config_path('wordpress/admin-menu.php')]);
 
