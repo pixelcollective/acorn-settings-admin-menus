@@ -7,11 +7,20 @@ return [
     | Admin Menu
     |----------------------------------------------------------------------
     |
-    | Modify WordPress admin menu functionalities
+    | Modify the WordPress admin menu
     |
     */
 
     'admin_menu' => [
+
+        /*
+        |----------------------------------------------------------------------
+        | Enable WordPress Admin Menu
+        |----------------------------------------------------------------------
+        |
+        | Set to false in order to remove the admin menu entirely.
+        |
+        */
 
         'enabled' => true,
 
@@ -22,33 +31,34 @@ return [
         |
         | Disable admin menu items and/or their sub menu items.
         |
-        | Parameter one options: 'display', 'hidden', 'removed'
-        |   - display: default behavior
-        |   - hidden:  visually non-apparent but still accessible
-        |   - removed: inaccessible
-        |
-        | Parameter two: an array of environments that this item should be enabled on
-        | Parameter three: an array of capabilities that should have access
+        | Each item in the array below expects three parameters dictating
+        | the conditions under which a menu item will display, be hidden, or
+        | rendered fully inaccessible.
         |
         | Each parameter is overridden by the ones preceeding it.
         |
-        */
-
-        /**
-         * Example usage:
-         *
-         * Shows `Dashboard` menu on development and staging
-         * Only shows `Updates` submenu to users with `develop` capability
-         --------------------
-
-         'dashboard' => [
-            'enabled' => ['', ['development', 'staging'], []],
-            'sub_menu_items' => [
-                'home'    => ['display', [], []],
-                'updates' => ['', [], ['develop']],
-            ],
-        ],
-
+        |   Parameter one:   string, matching one of the following options:
+        |
+        |       - 'display': default behavior
+        |       - 'hidden':  visually non-apparent but still accessible
+        |       - 'removed': inaccessible (HTTP response 403)
+        |       - '':        defer authority to following parameters
+        |
+        |   Parameter two:   an array of environments that this item should be enabled on
+        |   Parameter three: an array of capabilities that should have access
+        |
+        |   Example usage:
+        |     * Shows `Dashboard` menu on development and staging
+        |     * Only shows `Updates` submenu to users with `develop` capability
+        |
+        |    'dashboard' => [
+        |       'enabled'        => ['', ['development', 'staging'], []],
+        |       'sub_menu_items' => [
+        |           'home'       => ['display', [], []],
+        |           'updates'    => ['', [], ['develop']],
+        |       ],
+        |    ],
+        |
         */
 
         'menu_items' => [
